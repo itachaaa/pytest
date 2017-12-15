@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>pic_show</title>
+</head>
+<body>
+    {% for img in pic%}
+        <img src='{{img.pic.url}}'>
+    {% endfor %}
+    <!--此处想显示每一张图片, 不管是后台上传的还是自定义上传的-->
+    <!--然而 这里获取的url 前面似乎有些不对, 加上了域名, 后续探讨下-->
+</body>
+</html>

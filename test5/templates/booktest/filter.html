@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>filters</title>
+</head>
+<body>
+<ul>
+    {% load filters %}
+    {% for book in list %}
+        {% if book.id|mod_num:3 %}
+            <li style="color: red">{{book.btitle}}</li>
+        {% else %}
+            <li style="color: green">{{book.btitle}}</li>
+        {% endif %}
+    {% endfor %}
+</ul>
+</body>
+</html>

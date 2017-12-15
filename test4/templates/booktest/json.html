@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>json</title>
+    <script src="../../static/js/jquery-1.12.4.min.js"></script>
+    <script>
+        $(function(){
+            $("#btn").click(function(){
+                $.ajax({
+                    'url': '/json1',
+                    'type': 'get',
+                    'dataType': 'json'
+                }).done(function (dat) {0
+//                    console.log(dat.lists)
+                    var list = dat.lists;
+                    var str = '';
+
+                    for (var i=0; i<list.length; i++) {
+                        str += "<li>" + list[i].btitle + list[i].bpub_date + "</li>";
+                    }
+                    $('.list').html(str)
+                    $('.list').css({'display': ($('.list').css('display') == 'none')?' block' : 'none'});
+                }).fail(function () {
+                    alert("服务器超时, 请重试")
+                })
+            })
+        })
+    </script>
+</head>
+<body>
+    <h1>通过ajax获取数据</h1>
+    <input type="button" value="显示信息" id="btn">
+    <ul class="list" style="display: none"></ul>
+
+</body>
+</html>

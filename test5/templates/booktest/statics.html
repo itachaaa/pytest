@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>statics</title>
+</head>
+<body>
+    {% load static from staticfiles %}
+    <img src="{% static "img/django.jpg"%}"/>
+    <!--此处打双引号 为何不会出bug?-->
+    <!--理论上应该里面打单引号-->
+    <!--此处是动态生成地址, 如果是绝对地址 不利于维护 -->
+</body>
+</html>

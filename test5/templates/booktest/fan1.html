@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>fan1</title>
+</head>
+<body>
+    普通链接：<a href="/fan1">普通fan1</a>
+    <hr>
+    反向解析：<a href="{%url 'booktest:fan6'%}">反向解析fan1</a>
+    <hr>
+    <a href="{% url 'booktest:fan3' 1888 188 %}">动态地址和正则传参跳转到fan3</a>
+</body>
+</html>
